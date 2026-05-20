@@ -1,0 +1,36 @@
+
+library(bslib)
+library(shiny)
+library(lubridate)
+
+fluidPage(
+  titlePanel("Walk Log"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      
+      dateInput(
+        inputId = "date",
+        label = h3("Date input"),
+        value = Sys.Date()),
+      hr(),
+      verbatimTextOutput("value"),
+      
+      selectizeInput("time_of_walk", "Time of Walk",
+                  choices = c("Morning", "Midday", "Afternoon", "Evening")),
+      
+      checkboxGroupInput("human_participants", "Human Participants",
+                  choices = c("Melanie", "Jennifer", "Grace", "Sebastian", "Anna", "Other")),
+                  
+      checkboxGroupInput("canine_participants", "Canine Participants",
+                   choices = c("Rock", "Piper", "Josie", "Other")),
+      
+      checkboxGroupInput("animal_sightings", "Animal Sightings of Note",
+                         choices = c("Deer", "Coyote", "Snake", "Owl", "Other"))
+    ),
+    
+    mainPanel(
+      verbatimTextOutput("summary")
+    )
+  )
+)

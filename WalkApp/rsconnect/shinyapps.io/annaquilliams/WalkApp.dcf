@@ -1,0 +1,12 @@
+name: WalkApp
+title: WalkApp
+username: annaquilliams
+account: annaquilliams
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 17353318
+bundleId: 12018683
+url: https://annaquilliams.shinyapps.io/WalkApp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
